@@ -1,0 +1,24 @@
+<h4>Flopbox</h4>
+
+<div class="mb-3">
+  <b>My Favorite Actors</b>
+
+  <ul class="list-unstyled">
+    <li 
+        *ngFor = "let actor of favoriteActors; even as e; last as l; index as i"
+        [class]="getStyle(l,e)"
+    >{{i+1}}). {{actor.name}}</li>
+  </ul>
+</div>
+
+<div>
+  <b>All Actors</b>
+  <my-actor-display
+    *ngFor = "let actor of actors"
+    [actor]="actor"
+    (selectedActorEvent)="actorSelected($event)"
+  ></my-actor-display>
+
+</div>
+
+
